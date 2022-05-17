@@ -1,0 +1,66 @@
+Homework lesson 1
+Linux terminal (GitBash) commands
+
+1) Посмотреть где я => pwd
+2) Создать папку => mkdir Homework_1
+3) Зайти в папку => cd Homework_1/
+4) Создать 3 папки => mkdir folder1 folder2 folder3
+5) Зайти в любоую папку => cd folder1/
+6) Создать 5 файлов (3 txt, 2 json) =>  touch file1.txt file2.txt file3.txt cd file4.json file5.json
+7) Создать 3 папки => mkdir newfolder1 newfolder2 newfolder3
+8) Вывести список содержимого папки => ls -la
+9) + Открыть любой txt файл => vim file1.txt
+10) + написать туда что-нибудь, любой текст. => i => Hello...
+11) + сохранить и выйти. => esc => :wq
+12) Выйти из папки на уровень выше => cd ../
+—
+13) переместить любые 2 файла, которые вы создали, в любую другую папку =>  mv folder1/{file4.json,file5.json} folder3
+14) скопировать любые 2 файла, которые вы создали, в любую другую папку => cp folder1/{file2.txt,file3.txt} folder2
+15) Найти файл по имени => find -name file2.txt => ./folder1/file2.txt ./folder2/file2.txt
+16) просмотреть содержимое в реальном времени (команда grep) изучите как она работает => tail -f file2.txt | grep 21:30
+17) вывести несколько первых строк из текстового файла => head -n 3 file1.txt
+18) вывести несколько последних строк из текстового файла => tail -n 2 file2.txt
+19) просмотреть содержимое длинного файла (команда less) изучите как она работает. => less -N 5 file.txt
+20) вывести дату и время => date
+=========
+
+Задание *
+1) Отправить http запрос на сервер.
+http://162.55.220.72:5005/object_info_3?name=Vadim&age=32&salary=1000 => 
+
+$ curl http://162.55.220.72:5005/object_info_3?name=Vadim&age=32&salary=1000
+[4] 822
+[5] 823
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0[5]   Done                    age=32
+
+vtolubaeva@VTolubaevaT15 MINGW64 ~/Documents/Cources/Group_26/GitBash/Homework_1/folder1
+100   290  100   290    0     0   2102      0 --:--:-- --:--:-- --:--:--  2116<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<title>500 Internal Server Error</title>
+<h1>Internal Server Error</h1>
+<p>The server encountered an internal error and was unable to complete your request. Either the server is overloaded or there is an error in the application.</p>
+
+// curl http://162.55.220.72:5005/terminal-hw-request - этот запросотрабатывает нормально //
+
+2) Написать скрипт который выполнит автоматически пункты 3, 4, 5, 6, 7, 8, 13
+$ bash script.txt
+total 8
+drwxr-xr-x 1 vtolubaeva 1049089 0 Jan 14 16:47 .
+drwxr-xr-x 1 vtolubaeva 1049089 0 Jan 14 16:47 ..
+-rw-r--r-- 1 vtolubaeva 1049089 0 Jan 14 16:47 cd
+-rw-r--r-- 1 vtolubaeva 1049089 0 Jan 14 16:47 file1.txt
+-rw-r--r-- 1 vtolubaeva 1049089 0 Jan 14 16:47 file2.txt
+-rw-r--r-- 1 vtolubaeva 1049089 0 Jan 14 16:47 file3.txt
+-rw-r--r-- 1 vtolubaeva 1049089 0 Jan 14 16:47 file4.json
+-rw-r--r-- 1 vtolubaeva 1049089 0 Jan 14 16:47 file5.json
+
+(#! /bin/bash
+cd newfolder1
+mkdir folder11 folder12 folder13
+cd folder11
+touch file1.txt file2.txt file3.txt cd file4.json file5.json
+ls -la
+cd ..
+mv folder11/{file1.txt,file2.txt} folder12)
+
